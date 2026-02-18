@@ -2,12 +2,11 @@ export default function AboutPage() {
   return (
     <>
       <div className="py-5 container">
-        <h1>About this project</h1>
+        <h1>About Us</h1>
         <p className="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae minima
-          voluptas ea repellendus aliquid, expedita nulla iure eligendi!
-          Dignissimos reiciendis nemo aliquid praesentium, soluta eos assumenda
-          sapiente veniam dicta cumque.
+          Acquistare da noi è semplice, veloce e sicuro. Con pochi clic puoi
+          ricevere comodamente a casa tua ciò che desideri, con spedizioni
+          rapide e un servizio clienti sempre pronto ad aiutarti.
         </p>
       </div>
     </>
