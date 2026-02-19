@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]);
+  console.log(products);
   function fetchProduct() {
     axios.get("https://fakestoreapi.com/products").then((res) => {
       const productList = res.data;
@@ -12,9 +14,9 @@ export default function ProductPage() {
 
   useEffect(fetchProduct, []);
   return (
-    <>
-      <div className="container">
-        <h1>I Nostri Prodotti</h1>
+    <div className="container">
+      <h1>I Nostri Prodotti</h1>
+      <Link to={"/product/" + products.id}>
         <div className="row g-3">
           {products.map((product) => (
             <div key={product.id} className="col-3">
@@ -34,7 +36,7 @@ export default function ProductPage() {
             </div>
           ))}
         </div>
-      </div>
-    </>
+      </Link>
+    </div>
   );
 }
