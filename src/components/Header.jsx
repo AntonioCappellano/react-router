@@ -30,6 +30,11 @@ export default function Header() {
                 About us
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/product">
+                Prodotti
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
