@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]);
-  console.log(products);
+
   function fetchProduct() {
     axios.get("https://fakestoreapi.com/products").then((res) => {
       const productList = res.data;
@@ -16,11 +16,12 @@ export default function ProductPage() {
   return (
     <div className="container">
       <h1>I Nostri Prodotti</h1>
-      <Link to={"/product/" + products.id}>
-        <div className="row g-3">
-          {products.map((product) => (
-            <div key={product.id} className="col-3">
-              <div className="card h-100">
+
+      <div className="row g-3">
+        {products.map((product) => (
+          <div key={product.id} className="col-3">
+            <div className="card h-100">
+              <Link to={"/product/" + product.id}>
                 <div className="p-3">
                   <img
                     src={product.image}
@@ -32,11 +33,11 @@ export default function ProductPage() {
                     <h4>{product.title}</h4>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
-          ))}
-        </div>
-      </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
