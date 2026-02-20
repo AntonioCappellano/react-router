@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useBudget } from "../Context/BudgetContext";
 
 export default function Header() {
+  const { budgetMode, setBudgetMode } = useBudget();
+  const buttonText = budgetMode ? "Budget Off" : "Budget On";
   return (
     <nav className="bg-body-tertiary navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -35,6 +38,14 @@ export default function Header() {
                 Prodotti
               </NavLink>
             </li>
+            <div>
+              <button
+                className="btn btn-primary"
+                onClick={() => setBudgetMode(!budgetMode)}
+              >
+                {buttonText}
+              </button>
+            </div>
           </ul>
         </div>
       </div>
